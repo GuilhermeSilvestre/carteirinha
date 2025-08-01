@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carteirinha Estudantil</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 420px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-header {
+      background: #004080;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .card-header img {
+      max-height: 50px;
+      object-fit: contain;
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 16px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .student-photo {
+      width: 80px;
+      height: 100px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: #ccc;
+    }
+
+    .student-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .student-info p {
+      margin: 4px 0;
+      font-size: 0.9rem;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .qr-code img {
+      width: 80px;
+      height: 80px;
+    }
+
+    .card-footer {
+      background: #f8f8f8;
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      color: #666;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        width: 95%;
+      }
+
+      .card-body {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .student-photo,
+      .qr-code img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .student-info {
+        text-align: center;
+      }
+
+      .card-footer {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-header">
+      <img src="logo.png" alt="Logo da Instituição" />
+    </div>
+
+    <div class="card-body">
+      <img src="foto.png" alt="Foto do Estudante" class="student-photo" />
+      
+      <div class="student-info">
+        <p><span class="label">Nome:</span> Guilherme Augusto Astolfi Silvestre</p>
+        <p><span class="label">Curso:</span> Bacharelado em Ciência da Computação</p>
+        <p><span class="label">Matrícula:</span> 270231656</p>
+      </div>
+
+      <div class="qr-code">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://estacio.br/&size=100x100" alt="QR Code">
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <span>Validade: 12/2026</span>
+      <span>Modalidade: EAD</span>
+    </div>
+  </div>
+
+</body>
+</html>
